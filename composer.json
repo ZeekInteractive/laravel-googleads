@@ -1,0 +1,51 @@
+{
+    "name": "luketowers/laravel-gooogleads",
+    "description": "Simplifies using the google-ads-php client library and Google Ads Query Language in Laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Towers",
+            "role": "Author",
+            "email": "laravel@luketowers.ca"
+        }
+    ],
+    "homepage": "https://github.com/LukeTowers/laravel-googleads",
+    "keywords": [
+        "laravel",
+        "google-ads-page",
+        "Google Ads",
+        "laravel-google-ads",
+        "gaql"
+    ],
+    "require": {
+        "illuminate/support": "^9.0 || ^10.0",
+        "googleads/google-ads-php": "^21.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4.4",
+        "nesbot/carbon": "^2.66",
+        "orchestra/testbench": "^7.0 || ^8.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "LukeTowers\\LaravelGoogleAds\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LukeTowers\\LaravelGoogleAds\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LukeTowers\\LaravelGoogleAds\\ServiceProvider"
+            ]
+        }
+    }
+}
