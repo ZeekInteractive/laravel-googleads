@@ -18,7 +18,7 @@
         "gaql"
     ],
     "require": {
-        "illuminate/support": "^9.0 || ^10.0",
+        "illuminate/support": "^8.0 || ^9.0 || ^10.0",
         "googleads/google-ads-php": "^21.1"
     },
     "require-dev": {
