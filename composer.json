@@ -1,5 +1,5 @@
 {
-    "name": "luketowers/laravel-gooogleads",
+    "name": "luketowers/laravel-googleads",
     "description": "Simplifies using the google-ads-php client library and Google Ads Query Language in Laravel.",
     "license": "MIT",
     "authors": [
