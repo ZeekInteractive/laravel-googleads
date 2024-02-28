@@ -13,6 +13,10 @@ php artisan vendor:publish --provider="LukeTowers\GoogleAds\GoogleAdsServiceProv
 
 Modify the `config/googleads.php` file to include your Google Ads credentials and other settings.
 
+## Notes
+
+https://groups.google.com/g/adwords-api/c/B0VVHqNOLYs - Google Ads only has a single valid scope
+
 ## Usage
 
 ### Get the Google Ads client
