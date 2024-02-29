@@ -15,7 +15,9 @@ Modify the `config/googleads.php` file to include your Google Ads credentials an
 
 ## Notes
 
-https://groups.google.com/g/adwords-api/c/B0VVHqNOLYs - Google Ads only has a single valid scope
+### Google Ads does not have a read-only scope
+
+See https://groups.google.com/g/adwords-api/c/B0VVHqNOLYs, the only oauth scope available is `https://www.googleapis.com/auth/adwords` which is read-write. In order to protect against accidental writes, you should use a separate Google Ads account for read-only access.
 
 ## Usage
 
@@ -39,14 +41,27 @@ $googleAds = new GoogleAds([
 ]);
 ```
 
-### Google Ads Query Language
-```php
-use LukeTowers\GoogleAds\GoogleAds;
+### List all customers that the authenticated user has access to
 
-$googleAds = new GoogleAds();
-$googleAds->query('SELECT campaign.id, campaign.name FROM campaign');
+```php
+$ads = new GoogleAds([
+    'clientId' => config('services.google.client_id'),
+    'clientSecret' => config('services.google.client_secret'),
+    'developerToken' => config('services.google.ads_dev_token'),
+    'refreshToken' => $user->google_refresh_token,
+]);
+
+$ads->listCustomers(); // ['customerId' => 'Descriptive Name']
 ```
 
+### Google Ads Query Language
+
+>**NOTE:** Not implemented yet.
+
+```php
+$googleAds = App::make('google-ads');
+$googleAds->query('SELECT campaign.id, campaign.name FROM campaign');
+```
 
 ## Related Resources:
 
