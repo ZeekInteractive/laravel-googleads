@@ -1,5 +1,5 @@
 {
-    "name": "luketowers/laravel-googleads",
+    "name": "zeek/laravel-googleads",
     "description": "Simplifies using the google-ads-php client library and Google Ads Query Language in Laravel.",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "email": "laravel@luketowers.ca"
         }
     ],
-    "homepage": "https://github.com/LukeTowers/laravel-googleads",
+    "homepage": "https://github.com/ZeekInteractive/laravel-googleads",
     "keywords": [
         "laravel",
         "google-ads-page",
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "LukeTowers\\LaravelGoogleAds\\": "src"
+            "Zeek\\LaravelGoogleAds\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "LukeTowers\\LaravelGoogleAds\\Tests\\": "tests"
+            "Zeek\\LaravelGoogleAds\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LukeTowers\\LaravelGoogleAds\\ServiceProvider"
+                "Zeek\\LaravelGoogleAds\\ServiceProvider"
             ]
         }
     }

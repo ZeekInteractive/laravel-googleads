@@ -1,6 +1,6 @@
 <?php
 
-namespace LukeTowers\LaravelGoogleAds;
+namespace Zeek\LaravelGoogleAds;
 
 use Google\Ads\GoogleAds\Lib\Configuration;
 use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;

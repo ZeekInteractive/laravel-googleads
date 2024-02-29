@@ -1,6 +1,6 @@
 <?php
 
-namespace LukeTowers\LaravelGoogleAds;
+namespace Zeek\LaravelGoogleAds;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

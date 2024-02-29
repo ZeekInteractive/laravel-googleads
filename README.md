@@ -3,12 +3,12 @@ Simplifies using the google-ads-php client library and Google Ads Query Language
 
 ## Installation
 ```bash
-composer require luketowers/laravel-googleads
+composer require zeek/laravel-googleads
 ```
 
 ## Configuration
 ```bash
-php artisan vendor:publish --provider="LukeTowers\GoogleAds\GoogleAdsServiceProvider"
+php artisan vendor:publish --provider="Zeek\GoogleAds\GoogleAdsServiceProvider"
 ```
 
 Modify the `config/googleads.php` file to include your Google Ads credentials and other settings. You will need the following:
@@ -36,7 +36,7 @@ $googleAds = App::make('google-ads');
 or
 
 ```php
-use LukeTowers\GoogleAds\GoogleAds;
+use Zeek\GoogleAds\GoogleAds;
 
 $googleAds = new GoogleAds([
     'developerToken' => env('GOOGLE_ADS_DEVELOPER_TOKEN'),
