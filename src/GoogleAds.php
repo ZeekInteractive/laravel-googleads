@@ -16,10 +16,50 @@ class GoogleAds
     protected Configuration $config;
     protected GoogleAdsClient $client;
     protected FetchAuthTokenInterface $oAuth2Credential;
+    protected array $configMapping = [
+        'CONNECTION' => [
+            'grpcChannelIsSecure',
+            'proxy',
+            'transport',
+        ],
+        'GOOGLE_ADS' => [
+            'developerToken',
+            'endpoint',
+            'linkedCustomerId',
+            'loginCustomerId',
+            'useCloudOrgForApiAccess',
+        ],
+        'LOGGING' => [
+            'logFilePath',
+            'logLevel',
+        ],
+        'OAUTH2' => [
+            'clientId',
+            'clientSecret',
+            'impersonatedEmail',
+            'jsonKeyFilePath',
+            'refreshToken',
+            'scopes',
+        ],
+    ];
 
     public function __construct(array $config = [])
     {
         // @TODO: Apply validation to the config array passed in
+
+        // Support both sectioned configs and flat configs
+        foreach ($config as $key => $value) {
+            if (is_array($value)) {
+                continue;
+            }
+
+            foreach ($this->configMapping as $section => $keys) {
+                if (in_array($key, $keys)) {
+                    $config[$section][$key] = $value;
+                    unset($config[$key]);
+                }
+            }
+        }
 
         // Build the configuration
         $this->config = new Configuration($config);
