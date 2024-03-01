@@ -18,6 +18,8 @@ Modify the `config/googleads.php` file to include your Google Ads credentials an
 - `refreshToken` - The refresh token for the account you to access, see the usage example below for how you can use Socialite to obtain this.
 - `clientCustomerId` - The customer ID of the account you want to access, see https://developers.google.com/google-ads/api/docs/best-practices/test-accounts
 
+>**WARNING**: The Developer Token will be PERMANENTLY associated with the OAuth2 Client ID upon first use. If you need to change the Developer Token you will need to create a new Google Cloud Project & new OAuth2 credentials.
+
 >**NOTE:** Ensure that your Google Cloud Project has the Google Ads API enabled.
 
 ## Notes

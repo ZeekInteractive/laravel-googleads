@@ -19,6 +19,22 @@ return [
             | @see https://developers.google.com/google-ads/api/docs/get-started/dev-token
             | @see https://support.google.com/google-ads/answer/7459399
             |
+            | !!! WARNING !!!
+            |
+            | Each Google API Console project can be associated with the developer
+            | token from only one manager account. Once you make a Google Ads API
+            | request, the developer token is permanently paired to the Google API
+            | Console project. If you don't use a new Google API Console project,
+            | you'll get a DEVELOPER_TOKEN_PROHIBITED error when making a request.
+            |
+            | If integrating into an existing project, be extremely careful not to
+            | mix a temporary developer token meant for testing with your production
+            | OAuth Client ID & Secret or you will be forced to either permanently
+            | use the test developer token or create a new Google API Console project.
+            |
+            | @see https://developers.google.com/google-ads/api/docs/common-errors#developer_token_prohibited
+            | @see https://groups.google.com/g/adwords-api/c/YboB7F2RZyI
+            |
             */
 
             'developerToken' => env('GOOGLE_ADS_DEVELOPER_TOKEN'),
